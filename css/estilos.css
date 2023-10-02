@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  border-bottom: 2px #ed1c24 solid;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  background: #f3f3f3;
+  font-size: 16px;
+  line-height:1.5em;
+}
+/* "Reset" */
+.paletaDeColores {
+color: #ed1c24;
+color: #f15a24;
+color: #f7931e;
+color: #fbb03b;
+}
+h1, h2, h3, h4, h5, h6, a, p, button {
+  font-weight:600;
+  line-height:1.2em;
+  margin:0;
+  padding:0;
+  border:none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family:"Raleway", sans-serif;
+}
+li, ol, ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  border:none;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  line-height:1.5em;
+  font-weight:400;
+}
+a {
+  text-decoration:none;
+  color:#f15a24;
+}
+a:hover {
+  text-decoration:none;
+  color:#f3f3f3;
+}
+
+/* fin del "Reset" */
+
+/* Estilos genéricos o generales */
+button {
+  background: #f3f3f3;
+  color:#f15a24;
+  transition: ease-in .5s;
+  padding:8px 20px;
+  border-radius:5px;
+}
+button:hover {
+  background: #ed1c24;
+  color:#f3f3f3;
+  transition: ease-out .2s;
+  box-shadow:0 5px 20px -10px rgba(0,0,0,0.5);
+}
+.sectores {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.sectores ul {
+  display:flex;
+  align-items:flex-start;
+  justify-content: center;
+  margin:20px 0;
+}
+.sectores li {
+  width: calc(25% - 20px);
+  box-sizing: border-box;
+}
+.sectores h4 {
+  font-weight:600;
+  font-size:1.2em;
+  margin:0 0 10px 0;
+  text-align:center;
+}
+.sectores p {
+  margin:0 0 20px 0;
+}
+
+.sectores button {
+  display:flex;
+  margin:0 auto;
+}
+.tituloSeccion { 
+  color:#f3f3f3;
+  font-weight:800;
+  text-align:center;
+  font-size:3em;
+  text-shadow:3px 3px 2px rgba(0, 0, 0, 0.25);
+  margin:0 0 40px 0;
+}
+.subtituloSeccion {
+  color:#f3f3f3;
+}
+/* Fin de "Estilos genéricos o generales" */
+
+/* HEADER */
+header {
+  width: 100vw;
+  margin: 0 auto;
+  position:fixed;
+  background:#f3f3f3;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  z-index:999;
+}
+header section {
+  height: 80px;
+  max-width:80vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin:0 auto;
+}
+
+#logo img {
+  height: 25px;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+nav li {
+  padding: 10px 0 10px 20px;
+}
+nav a {
+  text-transform: uppercase;
+  color: #666;
+  padding: 0 0 5px 0;
+  border-bottom: 2px #f3f3f3 solid;
+  transition: ease-in-out .5s;
+}
+nav a:hover {
+  color: #000;
+  border-bottom: 2px #fbb03b solid;
+  transition: ease-in-out .2s;
+}
+/* HEADER */
+
+/* NOVEDADES */
+#novedades {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-top:100px;
+}
+#carrusel {
+  padding: 0 0 20px 0;
+}
+#carrusel img {
+  width: 100%;
+}
+#categorias {
+  display: flex;
+  flex-direction: row;
+}
+#categorias div {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:300px;
+  gap: 20px;
+  box-sizing: border-box;
+}
+#categorias article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+#capacitacionesCat {
+  background: #fbb03b;
+}
+#equipoCat {
+  background: #f7931e;
+}
+#opinionesCat {
+  background: #f15a24;
+}
+#categorias article h2 {
+  color: #f3f3f3;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 800;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+/* NOVEDADES */
+
+/* QUIENES SOMOS */
+#somos {
+  flex-direction: row;
+}
+#somos article {
+  padding: 0 50px 0 0;
+}
+#somos h2 {
+  margin:0 0 40px 0;
+}
+#somos p {
+  font-size:1.2em;
+  line-height:1.5em;
+}
+#somos article img {
+  margin:40px 0 0 0;
+}
+#somos img {
+  width:50%;
+}
+/* QUIENES SOMOS */
+
+/* CAPACITACIONES */
+#capacitaciones {
+  background: linear-gradient(45deg, #fbb03b 0%, #f15a24 100%);
+  color:#f3f3f3;
+}
+#acpacitaciones article {
+  display:flex;
+  flex-direction:column;
+}
+.cursos img {
+  width:100%;
+  margin:0 0 30px 0;
+  opacity:0.8;
+  box-shadow:-10px 10px 0 rgba(0, 0, 0, 0.25);
+  transition: ease-in .5s;
+}
+.cursos img:hover {
+  opacity:1;
+  box-shadow:10px -10px 0 rgba(237, 28, 36, 0.5);
+  transition: ease-out .5s;
+}
+/* CAPACITACIONES */
+
+/* OPINIONES DE LOS ESTUDIANTES */
+#opiniones {
+  background: linear-gradient(45deg, #f15a24 0%, #f7931e 100%);
+  color:#f3f3f3;
+}
+.opiniones img {
+  display:flex;
+  width:50%;
+  margin:0 auto;
+  margin-bottom:20px;
+  border-radius:100%;
+  box-shadow:0 0 20px rgba(0, 0, 0, 0.25);
+  transition: ease-in .5s;
+}
+.opiniones img:hover {
+  box-shadow:0 0 0 15px rgba(237, 28, 36, .5);
+  transition: ease-out .2s;
+}
+.opiniones h3 {
+  font-size: 1.2em;
+}
+/* OPINIONES DE LOS ESTUDIANTES */
+
+/* CALL TO ACTION */
+#cta {
+  background: linear-gradient(45deg, #fff 0%, #ccc 100%);
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction:column;
+}
+#cta .sectores {
+  flex-direction: row;
+}
+#cta .sectores > div {
+  display: flex;
+  flex-direction: column;
+  width:50%;
+  align-items: center;
+}
+#cta h2 {
+  font-weight:600;
+  color:#f15a24;
+  text-align:center;
+  font-size:1.8em;
+  line-height: 1.2em;
+}
+#cta h2 span {
+  font-weight:900;
+  font-size:2.5em;
+  line-height: 1.2em;
+}
+#cta button {
+  background: #25d366;
+  margin: 40px 0 0 0;
+  padding: 10px 20px;
+  color:#f3f3f3;
+  display:flex;
+  align-items:center;
+}
+#cta button:hover {
+  background: #23b554;
+}
+#cta button i {
+  margin:0 10px 0 0;
+}
+/* CALL TO ACTION */
+
+/* EQUIPO Y COLABORADORES */
+#equipo {
+  background: linear-gradient(270deg, #f15a24 0%, #ed1c24 100%);
+  color:#f3f3f3;
+  padding:50px 0; 
+}
+#equipo article {
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+}
+#equipo article p {
+  font-size: 0.9em;
+  font-weight:400;
+}
+#equipo article p i {
+  padding:0 10px 0 0;
+}
+.miembro img {
+  width:80%;
+  margin:0 auto;
+  margin-bottom:40px;
+  border-radius:100%;
+  box-shadow:0 0 0 10px rgba(243, 243, 243, 0.8);
+  transition: ease-in .5s;
+}
+.miembro img:hover {
+  box-shadow:0 0 0 15px rgba(0, 0, 0, 0.25);
+  transition:ease-out .2s;
+}
+.miembro h4 {
+  text-transform:capitalize;
+}
+/* EQUIPO Y COLABORADORES */
+
+/* FOOTER */
+footer {
+  display:flex;
+  background:#333;
+  color:#f3f3f3;
+  flex-direction:row;
+}
+footer article {
+  font-size: 0.9em;
+  font-weight:400;
+}
+footer article img {
+  margin:50px 0 20px 0;
+}
+footer article p {
+  margin:0 0 10px 0;
+}
+footer section {
+  width:40%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+footer iframe {
+  width:60%;
+  margin:0 auto;
+  padding:0;
+  box-sizing: border-box;
+}
+/* FOOTER */
+
+/* --------------------------
+  -- R E S P O N S I V E --
+-------------------------- */
+
+@media(max-width:959px){
+
+}
+@media(max-width:767px){
+  .sectores, #novedades { max-width: 90vw; }
+
+}
+@media(max-width:479px){
+  
+  /* Estilos genéricos o generales */
+  .sectores ul {
+    flex-direction:column;
+  }
+  .sectores li {
+    width:100%;
+    margin:0 0 40px 0;
+  }
+  .tituloSeccion {
+    font-size:1.8em;
+  }
+
+  /* NOVEDADES */
+  .sectores, #novedades {
+    max-width: 85vw;
+  }
+  #categorias {
+    justify-content:center;
+  }
+  #categorias div {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+  }
+  #categorias article {
+    height:100px;
+  }
+  #categorias article h2 {
+    font-size: 1.2em;
+  }
+
+  /* QUIENES SOMOS */
+  #somos {
+    flex-direction: column-reverse;
+  }
+  #somos article {
+    padding:0;
+  }
+  #somos img {
+    width:100%;
+  }
+  #somos h2 {
+    margin:20px 0 10px 0;
+  }
+  #somos p {
+    font-size:1em;
+  }
+
+  /* CAPACITACIONES */
+
+  /* OPINIONES */
+
+  /* CALL TO ACTION */
+  #cta .sectores {
+    flex-direction:column;
+  }
+  #cta .sectores > div {
+    width:100%;
+  }
+  #cta h2 {
+    font-size:1.2em;
+  }
+  #cta h2 span {
+    font-size:2em;    
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction:column-reverse;
+  }
+  footer section {
+    width:100%;
+    padding:50px 0;
+  }
+  footer iframe {
+    width:100%;
+  }
+}
+  
+  

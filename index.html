@@ -38,21 +38,29 @@
 
 		<!-- MAIN -->
 		<main id="novedades">
-			<article id="carrusel">
-				<ul>
-					<li><img src="img/carrusel-01.jpg" alt="slider 1" /></li>
-				</ul>
-			</article>
-			<section id="categorias">
+			<ul id="carrusel">
+        <li class="carruseles"><img src="img/carrusel-01.jpg" alt="slider 1" /></li>
+        <li class="carruseles"><img src="img/carrusel-02.jpg" alt="slider 2" /></li>
+        <li class="carruseles"><img src="img/carrusel-01.jpg" alt="slider 3" /></li>
+        <li class="carruseles"><img src="img/carrusel-02.jpg" alt="slider 4" /></li>
+        <a id="botonAnterior">
+          <i class="fas fa-angle-left" aria-hidden="true"></i>
+        </a>
+        <a id="botonSiguiente">
+          <i class="fas fa-angle-left" aria-hidden="true"></i>
+        </a>
+      </ul>
+
+      <section id="categorias">
         <div>
           <article id="capacitacionesCat">
-            <h2>capacitaciones</h2>
+            <p>capacitaciones</p>
           </article>
           <article id="equipoCat">
-            <h2>equipo y colaboradores</h2>
+            <p>equipo y colaboradores</p>
           </article>
           <article id="opinionesCat">
-            <h2>opiniones de estudiantes</h2>
+            <p>opiniones de estudiantes</p>
           </article>
         </div>
 			</section>
@@ -75,7 +83,7 @@
 					neque odio. Curabitur non congue nisl. Nulla et feugiat tellus. In vel
 					tincidunt risus, at varius orci.
 				</p>
-				<img src="img/logo.svg" alt="Aprender para Crear" />
+				<img id="logoSomos" src="img/logo.svg" alt="Aprender para Crear" />
 			</article>
 			<img src="img/nosotros.jpg" alt="Aprender para Crear" />
 		</section>
@@ -203,29 +211,24 @@
             <span>¿Tenés dudas?</span>
             <br />Comunicate con nosotros <br />a través de Whatsapp
           </h2>
+          <img src="img/whatsapp.svg" alt="">
           <button>
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> contactar
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <a href="https://web.whatsapp.com/send?phone=5491157585934&text=Hola%2C%20te%20escribo%20desde%20tu%20sitio%20web.%20Me%20gustar%C3%ADa%20consultarte%20por..."></a> contactar
           </button>
         </div>
-
+        <!-- Acá usamos un poquito las clases de bootstrap -->
         <div>
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+          <form id="formulario">
+            <h2>O dejanos un mensaje por email.</h2>
+            <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre" required>
+            <input type="email" id="email" class="form-control" name="email" aria-describedby="email" placeholder="mail" required>
+            <textarea id="mensaje" class="form-control" name="mensaje" rows="4" required placeholder="Dejanos tu mensaje" required></textarea>
+            <button type="submit" onclick="return enviarFormulario();" value="Enviar">
+              <i class="fas fa-angle-right" aria-hidden="true"></i> Enviar
+            </button>
           </form>
-
+          <div id="error"></div>
         </div>
 
       </div>
@@ -289,7 +292,20 @@
 							</p>
 						</article>
 					</li>
-				</ul>
+          <li>
+            <article id="francisco" class="miembro">
+              <img src="img/fran.jpg" alt="" />
+              <h4>francisco trabucco</h4>
+              <p>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>franciscotrabucco8@gmail.com
+              </p>
+              <p>
+                <i class="fa-brands fa-whatsapp"></i>+54 9 221 <b>455 9948</b>
+              </p>
+            </article>
+          </li>
+  
+        </ul>
 			</div>
 		</section>
 
@@ -307,7 +323,7 @@
 					<p><i class="fa-solid fa-phone-volume"></i>+54 9 11 8765 4321</p>
 					<p>
 						<i class="fa-solid fa-envelope" aria-hidden="true"></i
-						>info@aprenderparacrear.ar
+						>info@aprenderparacrecer.ar
 					</p>
 				</article>
 			</section>

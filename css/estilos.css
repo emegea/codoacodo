@@ -154,17 +154,102 @@ nav a:hover {
 #novedades {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   max-width: 80vw;
   margin: 0 auto;
   padding-top:100px;
 }
+/* CARRUSEL */
 #carrusel {
-  padding: 0 0 20px 0;
-}
-#carrusel img {
+  height:300px;
   width: 100%;
+  max-width: 80vw;
+  padding:0;
+  margin:0 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
 }
+.carruseles {
+  position: absolute;
+  width: 100%;
+  max-width: 80vw;
+  height: 300px;
+  padding:0;
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+.carruseles img {
+  width: 100%;
+  height:300px;
+}
+.izquierda {
+  /*   transform: translateX(-100%); */
+  opacity:0;
+  transition: .3s ease-in;
+}
+.centro {
+  /*   transform: translateX(0); */
+  opacity:1;
+  transition: .5s ease-in;
+}
+.derecha {
+  /*   transform: translateX(100%); */
+  opacity:0;
+  transition: .3s ease-in;
+}
+#botonAnterior, #botonSiguiente {
+  background: #fbb03b;
+  width: 50px;
+  height: 50px;
+  border:0;
+  overflow: hidden;
+  cursor:pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  transition: .3s ease-in;
+}
+#botonAnterior:hover, #botonSiguiente:hover {
+  background: #f7931e;
+  transition: .2s ease-out;
+}
+#botonAnterior {
+  left: 0;
+  border-radius: 0 100px 100px 0;
+}
+#botonSiguiente {
+  right: 0;
+  border-radius: 100px 0 0 100px;
+}
+#botonAnterior i, #botonSiguiente i {
+  color: #fafafa;
+  transition: .2s ease-out;
+}
+@media(max-width:480px){    
+    #botonAnterior, #botonSiguiente  {
+        height:40px;
+        width:20px !important;
+    }
+    #botonAnterior a {
+        padding:0 !important;
+        margin:0 auto;
+    }
+    #botonSiguiente a  {
+        padding:0 !important;
+        margin:0 auto;
+        right:-5px;
+    }
+    #botonAnterior i, #botonSiguiente i {
+        font-size: 15px;
+    }
+}
+
 #categorias {
   display: flex;
   flex-direction: row;
@@ -191,10 +276,12 @@ nav a:hover {
 #opinionesCat {
   background: #f15a24;
 }
-#categorias article h2 {
+#categorias article p {
+  font-family:"Raleway", sans-serif;
   color: #f3f3f3;
   text-transform: uppercase;
   font-size: 2em;
+  line-height: 1.2em;;
   font-weight: 800;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -288,29 +375,47 @@ nav a:hover {
 }
 #cta h2 {
   font-weight:600;
-  color:#f15a24;
   text-align:center;
   font-size:1.8em;
   line-height: 1.2em;
 }
 #cta h2 span {
+  color:#f15a24;
   font-weight:900;
   font-size:2.5em;
   line-height: 1.2em;
 }
-#cta button {
-  background: #25d366;
-  margin: 40px 0 0 0;
-  padding: 10px 20px;
+#cta img {
+  height:150px;
+}
+#cta button, .btn {
+  background:#25d366;
+  margin:0 auto;
+  padding:10px 20px;
   color:#f3f3f3;
   display:flex;
   align-items:center;
+  border:none;
 }
-#cta button:hover {
+#cta button:hover, .btn:hover {
   background: #23b554;
 }
 #cta button i {
   margin:0 10px 0 0;
+}
+#cta form {
+  max-width:60%;
+}
+#cta div > *, #cta form > * {
+  margin:0 0 20px 0;
+}
+#cta form input {
+  padding:10px;
+}
+#cta form button {
+  margin:0 auto;
+  width:100%;
+  justify-content:center;
 }
 /* CALL TO ACTION */
 
@@ -326,7 +431,7 @@ nav a:hover {
   text-align:center;
 }
 #equipo article p {
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight:400;
 }
 #equipo article p i {
@@ -366,6 +471,9 @@ footer article img {
 footer article p {
   margin:0 0 10px 0;
 }
+footer article p i {
+  margin:0 15px 0 0;
+}
 footer section {
   width:40%;
   display:flex;
@@ -394,6 +502,9 @@ footer iframe {
 @media(max-width:479px){
   
   /* Estilos genéricos o generales */
+  .sectores {
+    padding:80px 0;
+  }
   .sectores ul {
     flex-direction:column;
   }
@@ -406,7 +517,7 @@ footer iframe {
   }
 
   /* NOVEDADES */
-  .sectores, #novedades {
+  .sectores, #novedades, #carrusel, .carruseles {
     max-width: 85vw;
   }
   #categorias {
@@ -418,7 +529,7 @@ footer iframe {
     width:100%;
   }
   #categorias article {
-    height:100px;
+    height:150px;
   }
   #categorias article h2 {
     font-size: 1.2em;
@@ -440,6 +551,9 @@ footer iframe {
   #somos p {
     font-size:1em;
   }
+  #logoSomos { 
+    display:none;
+  }
 
   /* CAPACITACIONES */
 
@@ -452,11 +566,17 @@ footer iframe {
   #cta .sectores > div {
     width:100%;
   }
+  #cta div:first-child {
+    margin:0 0 50px 0;
+  }
   #cta h2 {
     font-size:1.2em;
   }
   #cta h2 span {
     font-size:2em;    
+  }
+  #cta form {
+    max-width:90%;
   }
 
   /* FOOTER */

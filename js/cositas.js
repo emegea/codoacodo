@@ -44,13 +44,13 @@ window.onload = function(){
 };
 
 /* FORMULARIO */
-
 var nombre  = document.getElementById("nombre");
 var email  = document.getElementById("email");
 var mensaje  = document.getElementById("mensaje");
-var form = document.getElementById("forulario");
+var form = document.getElementById("formulario");
 
 form.addEventListener("submit", function(event){
+  console.log("formulario funcionando");
   event.preventDefault();
   var mensajeError = [];
   

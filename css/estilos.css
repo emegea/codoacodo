@@ -71,14 +71,14 @@ button:hover {
   padding: 100px 0;
 }
 .sectores ul {
-  display:flex;
-  align-items:flex-start;
-  justify-content: center;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-gap:20px;
+  align-items:stretch;
   margin:60px 0;
 }
 .sectores li {
-  width: calc(25% - 20px);
-  box-sizing: border-box;
+  display:flex;
 }
 .sectores h4 {
   font-weight:600;
@@ -109,7 +109,7 @@ button:hover {
 
 /* HEADER */
 header {
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   position:fixed;
   background:#f3f3f3;
@@ -127,8 +127,9 @@ header section {
 }
 
 #logo img {
-  height: 25px;
+  height: 20px;
 }
+
 nav ul {
   display: flex;
   flex-direction: row;
@@ -137,6 +138,7 @@ nav li {
   padding: 10px 0 10px 20px;
 }
 nav a {
+  font-size:0.9em;
   text-transform: uppercase;
   color: #666;
   padding: 0 0 5px 0;
@@ -319,6 +321,11 @@ nav a:hover {
   display:flex;
   flex-direction:column;
 }
+.cursos, .opiniones {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .cursos img {
   width:100%;
   margin:0 0 30px 0;
@@ -376,13 +383,13 @@ nav a:hover {
 #cta h2 {
   font-weight:600;
   text-align:center;
-  font-size:1.8em;
+  font-size:1.6em;
   line-height: 1.2em;
 }
 #cta h2 span {
   color:#f15a24;
   font-weight:900;
-  font-size:2.5em;
+  font-size:2em;
   line-height: 1.2em;
 }
 #cta img {
@@ -406,9 +413,6 @@ nav a:hover {
 #cta form {
   max-width:60%;
 }
-#cta div > *, #cta form > * {
-  margin:0 0 20px 0;
-}
 #cta form input {
   padding:10px;
 }
@@ -417,13 +421,23 @@ nav a:hover {
   width:100%;
   justify-content:center;
 }
+#cta .sectores div > *, #cta form > * {
+  margin:0 0 20px 0;
+}
+#cta .sectores div > :last-child, #cta form > :last-child {
+  margin:0 auto;
+}
+
 /* CALL TO ACTION */
 
 /* EQUIPO Y COLABORADORES */
 #equipo {
   background: linear-gradient(270deg, #f15a24 0%, #ed1c24 100%);
   color:#f3f3f3;
-  padding:50px 0; 
+}
+#equipo ul {
+  grid-template-columns:repeat(5, 1fr);
+  margin:0 auto;
 }
 #equipo article {
   display:flex;
@@ -493,11 +507,49 @@ footer iframe {
 -------------------------- */
 
 @media(max-width:959px){
-
+  #equipo ul {
+    grid-template-columns:repeat(3, 1fr);
+  }
+  #categorias article p {
+    font-size: 1.3em;
+  }
 }
 @media(max-width:767px){
-  .sectores, #novedades { max-width: 90vw; }
-
+  .sectores, #novedades {
+    max-width: 90vw;
+  }
+  #carrusel {
+    max-width:100%;
+  }
+  .carruseles {
+    max-width:90vw !important;
+  }
+}
+@media(max-width:576px){
+/* Estilos genéricos o generales */
+  .sectores ul {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .sectores, #cta .sectores {
+    flex-direction:column;
+  }
+  #cta .sectores > div {
+    width:100%;
+  }
+  #categorias div {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+  }
+  /* EQUIPO */
+  #equipo ul {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .miembro img {
+    width:150px;
+    height:150px;
+  }
+  
 }
 @media(max-width:479px){
   
@@ -506,6 +558,7 @@ footer iframe {
     padding:80px 0;
   }
   .sectores ul {
+    grid-template-columns:repeat(1, 1fr);
     flex-direction:column;
   }
   .sectores li {
@@ -523,15 +576,10 @@ footer iframe {
   #categorias {
     justify-content:center;
   }
-  #categorias div {
-    display:flex;
-    flex-direction:column;
-    width:100%;
-  }
   #categorias article {
     height:150px;
   }
-  #categorias article h2 {
+  #categorias article p {
     font-size: 1.2em;
   }
 
@@ -555,10 +603,6 @@ footer iframe {
     display:none;
   }
 
-  /* CAPACITACIONES */
-
-  /* OPINIONES */
-
   /* CALL TO ACTION */
   #cta .sectores {
     flex-direction:column;
@@ -577,6 +621,10 @@ footer iframe {
   }
   #cta form {
     max-width:90%;
+  }
+  /* EQUIPO */
+  #equipo ul {
+    grid-template-columns:repeat(1, 1fr);
   }
 
   /* FOOTER */
